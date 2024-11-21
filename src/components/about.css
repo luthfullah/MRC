@@ -1,0 +1,40 @@
+
+/* Container for centering and padding */
+.executive-summary-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #e0e0e0; /* Light gray background for outer container */
+  }
+  
+  /* Inner content styling */
+  .executive-summary-content {
+    background-color: #fff; /* White background for content */
+    padding: 40px;
+    max-width: 1400px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  }
+  
+  /* Heading styling */
+  .executive-summary-heading,
+  .product-services-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333; /* Dark text for headings */
+  }
+  
+  /* Paragraph styling */
+  .executive-summary-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444; /* Darker gray for text */
+    margin-bottom: 20px;
+  }
+  
+  /* Bold styling */
+  .executive-summary-heading strong,
+  .product-services-heading strong {
+    font-weight: 700; /* Bolder font weight for emphasis */
+  }
