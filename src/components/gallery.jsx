@@ -1,84 +1,36 @@
-
-
-// import React, { useState } from 'react';
-// import Lightbox from 'react-image-lightbox';
-// import 'react-image-lightbox/style.css';
-
-// export const  Gallery = () => {
-//   const images = [
-//     'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg', 
-    
-//     'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg',
-//     'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg', 
-    
-//     'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg',
-//     'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg', 
-    
-//     'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg',
-//     'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg', 
-    
-//     'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg',
-//     'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg', 
-    
-//     'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg',
-//   ];
-
-//   const [isOpen, setIsOpen] = useState(false);
-//   const [photoIndex, setPhotoIndex] = useState(0);
-
-//   return (
-//     <div className='gallerycenter'>
-//     <div className="gallery-container">
-//       <h2 className="gallery-heading">Gallery</h2>
-//       <div className="gallery-grid">
-//         {images.map((image, index) => (
-//           <div
-//             key={index}
-//             className="gallery-item"
-//             onClick={() => {
-//               setPhotoIndex(index);
-//               setIsOpen(true);
-//             }}
-//           >
-//             <img src={image} alt={`Gallery image ${index + 1}`} />
-//           </div>
-//         ))}
-//       </div>
-
-//       {isOpen && (
-//         <Lightbox
-//           mainSrc={images[photoIndex]}
-//           nextSrc={images[(photoIndex + 1) % images.length]}
-//           prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-//           onCloseRequest={() => setIsOpen(false)}
-//           onMovePrevRequest={() =>
-//             setPhotoIndex((photoIndex + images.length - 1) % images.length)
-//           }
-//           onMoveNextRequest={() =>
-//             setPhotoIndex((photoIndex + 1) % images.length)
-//           }
-//         />
-//       )}
-//     </div>
-//     </div>
-//   );
-// };
-
-
-import React, { useState } from 'react';
-import './Gallery.css'; // Add necessary styles here
+import React, { useEffect, useState } from "react";
+import "./Gallery.css";
+import axios from "axios";
 
 export const Gallery = () => {
-  const images = [
-    'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg',
-    'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg',
-    'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg',
-    'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg',
-  ];
+  //   const images = [
+  //     'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg',
+  //     'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg',
+  //     'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg',
+  //     'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg',
+  //   ];
 
+  const [images, setImages] = useState([]);
+  const [error, setError] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
 
+  useEffect(() => {
+    // Fetch images from API on component mount
+    const fetchImages = async () => {
+      try {
+        const response = await axios.get(
+          // `${process.env.REACT_APP_PUBLIC_URL}/v1/b2c/productImages/get`
+          "https://marakahumanitarian.shop/v1/b2c/productImages/get"
+        );
+        setImages(Array.isArray(response.data) ? response.data : []); // Set images if valid response
+      } catch (err) {
+        setError("Error fetching images: " + err.message);
+      }
+    };
+
+    fetchImages();
+  }, []);
   const openModal = (index) => {
     setPhotoIndex(index);
     setIsOpen(true);
@@ -97,9 +49,9 @@ export const Gallery = () => {
   };
 
   return (
-    <div className="gallerycenter">
+    <div id="gallery" className="gallerycenter">
       <div className="gallery-container">
-        <h2 className="gallery-heading">Gallery</h2>
+        <h2 className=" text-center justify-content-center mb-4 py-3  fs-1 fw-bolder">Gallery</h2>
         <div className="gallery-grid">
           {images.map((image, index) => (
             <div
@@ -107,13 +59,26 @@ export const Gallery = () => {
               className="gallery-item"
               onClick={() => openModal(index)}
             >
-              <img src={image} alt={`Gallery image ${index + 1}`} />
+              <img
+                src={"https://marakahumanitarian.shop" + image.images[0]}
+                alt={`Gallery image ${index + 1}`}
+                style={{objectFit:"cover"}}
+              />
             </div>
           ))}
         </div>
 
         {isOpen && (
-          <div className="custom-lightbox">
+          <div className="custom-lightbox"
+          onClick={(e) => {
+            const clickX = e.clientX; // Get the horizontal position of the click
+            const screenWidth = window.innerWidth; // Get the total width of the viewport
+            if (clickX > screenWidth / 2) {
+              nextImage(); // Click on the right side, go to next image
+            } else {
+              prevImage(); // Click on the left side, go to previous image
+            }
+          }}>
             <div className="lightbox-overlay" onClick={closeModal}></div>
             <div className="lightbox-content">
               <button className="lightbox-close" onClick={closeModal}>
@@ -122,7 +87,13 @@ export const Gallery = () => {
               <button className="lightbox-prev" onClick={prevImage}>
                 &#10094;
               </button>
-              <img src={images[photoIndex]} alt={`Gallery image ${photoIndex + 1}`} />
+              <img
+                src={
+                  "https://marakahumanitarian.shop" +
+                  images[photoIndex].images[0]
+                }
+                alt={`Gallery image ${photoIndex + 1}`}
+              />
               <button className="lightbox-next" onClick={nextImage}>
                 &#10095;
               </button>
@@ -133,4 +104,3 @@ export const Gallery = () => {
     </div>
   );
 };
-

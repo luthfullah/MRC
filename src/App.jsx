@@ -24,14 +24,14 @@ const App = () => {
   useEffect(() => {
     setLandingPageData(JsonData);
   }, []);
-  console.log("lan",JsonData)
+  
 
   return (
     <div>
       <Navigation />
       <Header data={landingPageData.Header} />
       <Features data={landingPageData.Features} />
-      <About data={landingPageData.About} />
+      {/* <About data={landingPageData.About} /> */}
       <Services data={landingPageData.Services} />
       <Gallery />
       <PdfDownloadList data={landingPageData.PdfFiles}/>

@@ -5,19 +5,45 @@ export const Features = (props) => {
     <div id="features" className="text-center">
       <div className="container">
         <div className="col-md-10 col-md-offset-1 section-title">
-          <h2>Features</h2>
+          <h2>About</h2>
         </div>
-        <div className="row">
-          {props.data
-            ? props.data.map((d, i) => (
-                <div key={`${d.title}-${i}`} className="col-xs-6 col-md-3">
-                  {" "}
-                  <i className={d.icon}></i>
-                  <h3>{d.title}</h3>
-                  <p>{d.text}</p>
-                </div>
-              ))
-            : "Loading..."}
+        <div className=" col-md-12">
+          <h3>Executive Summary</h3>
+          <p className="text-justify">
+            Day To Day have established themselves as one of the well-known
+            brands throughout the United Arab Emirates.Day To Day have
+            established themselves as one of the well-known brands throughout
+            the United Arab Emirates.Day To Day have established themselves as
+            one of the well-known brands throughout the United Arab Emirates.
+          </p>
+          <p className="text-justify">
+            Day To Day have established themselves as one of the well-known
+            brands throughout the United Arab Emirates.
+          </p>
+          <h3>Product and Services</h3>
+          <p className="text-justify">
+            Day To Day have established themselves as one of the well-known
+            brands throughout the United Arab Emirates. Day To Day have
+            established themselves as one of the well-known brands throughout
+            the United Arab Emirates. Day To Day have established themselves as
+            one of the well-known brands throughout the United Arab Emirates.
+          </p>
+          <h3>Product and Services</h3>
+          <p className="text-justify">
+            Day To Day have established themselves as one of the well-known
+            brands throughout the United Arab Emirates. Day To Day have
+            established themselves as one of the well-known brands throughout
+            the United Arab Emirates. Day To Day have established themselves as
+            one of the well-known brands throughout the United Arab Emirates.
+          </p>
+          <h3>Product and Services</h3>
+          <p className="text-justify">
+            Day To Day have established themselves as one of the well-known
+            brands throughout the United Arab Emirates. Day To Day have
+            established themselves as one of the well-known brands throughout
+            the United Arab Emirates. Day To Day have established themselves as
+            one of the well-known brands throughout the United Arab Emirates.
+          </p>
         </div>
       </div>
     </div>

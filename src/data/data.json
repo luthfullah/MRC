@@ -80,42 +80,48 @@
       "smallImage": "img/portfolio/09-small.jpg"
     }
   ],
-  "Services": [
+  "Services" : [
     {
-      "icon": "fa fa-wordpress",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "id": 1,
+      "name": "Service 1",
+      "description": "This is the description for service 1.This is the description for service 1.This is the description for service 1.",
+      "date": "2024-12-01",
+      "image": "https://images.unsplash.com/photo-1477862096227-3a1bb3b08330?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60"
     },
     {
-      "icon": "fa fa-cart-arrow-down",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "id": 2,
+      "name": "Service 1 Service 1 Service 1 Service 1 Service 1 Service 1 Service 1 Service 1",
+      "description": "This is the description for service 1.This is the description for service 1.This is the description for service 1.",
+      "date": "2024-12-01",
+      "image": "https://images.unsplash.com/photo-1477862096227-3a1bb3b08330?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60"
     },
     {
-      "icon": "fa fa-cloud-download",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "id": 3,
+      "name": "Service 1 Service 1 Service 1 Service 1",
+      "description": "This is the description for service 1.This is the description for service 1TThis is the description for service 1.This is the description for service 1This is the description for service 1.This is the description for service 1.This is the description for service 1.",
+      "date": "2024-12-01",
+      "image": "https://images.unsplash.com/photo-1477862096227-3a1bb3b08330?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60"
     },
     {
-      "icon": "fa fa-language",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "id": 4,
+      "name": "Service 1 Service 1 Service 1 Service 1 Service 1 Service 1 Service 1 Service 1",
+      "description": "This is the description for service 1.This is the description for service 1.This is the description for service 1.",
+      "date": "2024-12-01",
+      "image": "https://images.unsplash.com/photo-1477862096227-3a1bb3b08330?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60"
     },
     {
-      "icon": "fa fa-plane",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
-    },
-    {
-      "icon": "fa fa-pie-chart",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "id": 5,
+      "name": "Service 1 Service 1 Service 1 Service 1",
+      "description": "This is the description for service 1.This is the description for service 1T1This is the descrThis is the description for service 1.This is the description for service 1Tiption for service 1.1This is the descrThis is the description for service 1.This is the description for service 1Tiption for service 1.1This is the descrThis is the description for service 1.This is the description for service 1Tiption for service 1.1This is the descrThis is the description for service 1.This is the description for service 1Tiption for service 1.his is the descrThis is the description for service 1.This is the description for service 1Tiption for service 1.This is the description for service 1.This is the description for service 1.",
+      "date": "2024-12-01",
+      "image": "https://images.unsplash.com/photo-1477862096227-3a1bb3b08330?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60"
     }
   ],
+  
   "Testimonials": [
     {
       "img": "img/testimonials/01.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nThis is the description for service 1.This is the description for service 1TThis is the description for service 1.This is the description for service 1Tibh ante facilisis bibendum dolor feugiat at.\"",
       "name": "John Doe"
     },
     {
@@ -167,9 +173,9 @@
     }
   ],
   "Contact": {
-    "address": "4321 California St, San Francisco, CA 12345 ",
-    "phone": "+1 123 456 1234",
-    "email": "info@company.com",
+    "address": "Department of Political Science, University of Peshawar",
+    "phone": "+92 91 9216751",
+    "email": "+92 91 9216751",
     "facebook": "fb.com",
     "twitter": "twitter.com",
     "youtube": "youtube.com"

@@ -7,6 +7,7 @@ html {
   font-weight: 400;
   width: 100% !important;
   height: 100% !important;
+  overflow-x: hidden;
 }
 h2,
 h3,
@@ -91,11 +92,11 @@ hr {
   font-family: "Lato", sans-serif;
   text-transform: uppercase;
   color: #555;
-  font-size: 15px;
-  font-weight: 400;
-  padding: 8px 2px;
+  font-size: 14px;
+  font-weight: 200;
+  padding: 6px 2px;
   border-radius: 0;
-  margin: 9px 20px 0;
+  margin: 9px 10px 0;
 }
 #menu.navbar-default .navbar-nav > li > a:after {
   display: block;
@@ -247,6 +248,7 @@ header .intro-text {
 /* Features Section */
 #features {
   background: #f6f6f6;
+  padding: 40px 40px ;
 }
 #features i.fa {
   font-size: 38px;
@@ -314,7 +316,7 @@ header .intro-text {
   color: #fff;
 }
 #services .service-desc {
-  margin: 10px 10px 20px;
+  margin: 20px 20px 20px;
 }
 #services h2 {
   color: #fff;
@@ -348,7 +350,7 @@ header .intro-text {
   color: rgba(255, 255, 255, 0.75);
 }
 #services .service-desc {
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 /* Portfolio Section */
 #portfolio {
@@ -362,6 +364,15 @@ header .intro-text {
   overflow: hidden;
   position: relative;
   margin: 0;
+}
+/* pdf */
+#pdf {
+  padding: 100px 0;
+  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
+  color: #fff;
+}
+#pdf h2 {
+  color: #fff;
 }
 .hover-bg .hover-text {
   position: absolute;
@@ -604,3 +615,20 @@ label {
     margin: 50px 0;
   }
 }
+
+.card-img-top {
+  border-bottom: 1px solid #ddd; /* Adds a line beneath the image */
+  border-radius: 10px;
+}
+
+.card {
+  border: 1px solid #ddd; /* Optional: Add border around the card */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift card on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
